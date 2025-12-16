@@ -1,4 +1,4 @@
-// app/layout.tsx  (fixed: removed invalid 'title' from viewport)
+// app/layout.tsx
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
@@ -18,6 +18,29 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: "/favicon.ico",
+  },
+
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "https://celestyum.com",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "https://celestyum.com/assets/images/poster.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CELESTYUM® Festival Poster",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: ["https://celestyum.com/assets/images/poster.jpg"],
   },
 };
 
@@ -45,9 +68,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
+            <main className="flex-grow">{children}</main>
             <footer className="w-full flex items-center justify-center py-3">
               <Link
                 isExternal
