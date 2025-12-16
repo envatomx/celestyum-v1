@@ -1,7 +1,8 @@
+// components/primitives.ts  (updated - title uses Altroned)
 import { tv } from "tailwind-variants";
 
 export const title = tv({
-  base: "tracking-tight inline font-semibold",
+  base: "tracking-tight inline font-semibold font-altroned",  // Altroned for all titles
   variants: {
     color: {
       violet: "from-[#FF1CF7] to-[#b249f8]",
@@ -15,7 +16,7 @@ export const title = tv({
     size: {
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl",
-      lg: "text-4xl lg:text-6xl",
+      lg: "text-5xl lg:text-7xl",
     },
     fullWidth: {
       true: "w-full block",

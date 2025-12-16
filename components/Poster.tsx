@@ -22,7 +22,7 @@ export default function Poster() {
           {/* Blurred glass footer with large centered text */}
           <CardFooter className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent py-12 px-8 backdrop-blur-md border-t border-white/20">
             <div className="w-full text-center">
-              <p className="text-white text-6xl md:text-7xl font-bold drop-shadow-2xl">
+              <p className="text-white text-sm md:text-7xl font-bold drop-shadow-2xl">
                 PHASE 1 LINEUP
               </p>
             </div>

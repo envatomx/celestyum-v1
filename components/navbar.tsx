@@ -1,4 +1,6 @@
-// components/navbar.tsx  (updated: search bar completely removed, logo size unchanged)
+// components/navbar.tsx  (navbar always visible, no hiding, mobile menu closes on click)
+"use client";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -12,6 +14,7 @@ import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -23,12 +26,19 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky" className="bg-transparent backdrop-blur-md">
+    <HeroUINavbar
+      maxWidth="xl"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/10"  // Fixed + visible background
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-center items-center" href="/">
-            <Logo size={12} className="text-white" />  {/* Size kept exactly as you set */}
+            <Logo size={12} className="text-white" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-8 justify-start ml-4">
@@ -39,7 +49,6 @@ export const Navbar = () => {
                   linkStyles({ color: "foreground" }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium text-lg",
                 )}
-                color="foreground"
                 href={item.href}
               >
                 {item.label}
@@ -69,21 +78,17 @@ export const Navbar = () => {
         <NavbarMenuToggle />
       </NavbarContent>
 
-      {/* Mobile menu - no search bar */}
-      <NavbarMenu>
-        <div className="mx-4 mt-6 flex flex-col gap-4">
+      <NavbarMenu className="bg-black/95 backdrop-blur-xl pt-20">
+        <div className="mx-4 mt-6 flex flex-col gap-6">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <NextLink
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
+                className={clsx(
+                  "text-2xl font-medium",
+                  index === 2 ? "text-primary" : "text-white",
+                )}
                 href={item.href}
-                className="text-lg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </NextLink>

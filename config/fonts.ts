@@ -1,11 +1,16 @@
-import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
+// config/fonts.ts  (FULL CODE - local fonts with variables)
+import localFont from "next/font/local";
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+// Altroned - for titles/headings
+export const altroned = localFont({
+  src: "../public/assets/fonts/ALTRONED.woff2",
+  display: "swap",
+  variable: "--font-altroned",
 });
 
-export const fontMono = FontMono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+// Bitpop - for body text
+export const bitpop = localFont({
+  src: "../public/assets/fonts/Bitpop.woff2",
+  display: "swap",
+  variable: "--font-bitpop",
 });

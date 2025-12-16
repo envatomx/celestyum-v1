@@ -1,4 +1,4 @@
-// components/TicketsSection.tsx  (updated: GA + Tables only, real prices, buttons open new page)
+// components/TicketsSection.tsx  (updated: buttons active with real links)
 "use client";
 
 import { title } from "@/components/primitives";
@@ -11,59 +11,56 @@ export default function TicketsSection() {
   return (
     <section id="tickets" className="relative z-10 w-full px-6 py-32">
       <div className="mx-auto max-w-7xl text-center">
-        <h2 className={title({ size: "lg" })}>TICKETS</h2>
+        <h2 className={title({ size: "md" })}>TICKETS</h2>
         <Divider className="my-10 max-w-md mx-auto" />
-        <p className="text-white/80 text-lg mt-6 mb-16">
+        <p className="text-white/80 text-base mt-6 mb-16">
           Early bird tickets and table reservations — on sale soon.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
-          {/* GA Ticket */}
           <Card className="bg-white/5 backdrop-blur-xl border-white/10 shadow-2xl hover:border-primary/50 transition-all group">
-            <CardBody className="py-16 px-12 text-center">
-              <h3 className="text-5xl font-bold mb-8">GENERAL ADMISSION</h3>
-              <div className="mb-12">
-                <p className="text-4xl font-bold text-primary mb-2">
+            <CardBody className="py-12 px-10 text-center">
+              <h3 className="text-md font-bold mb-6">GENERAL ADMISSION</h3>
+              <div className="mb-10">
+                <p className="text-3xl font-bold text-primary mb-2">
                   $2,500 MXN
                 </p>
-                <p className="text-xl text-white/70">
+                <p className="text-lg text-white/70">
                   ~$150 USD
                 </p>
               </div>
-              <ul className="text-left text-white/90 space-y-3 mb-12 max-w-sm mx-auto">
+              <ul className="text-left text-white/90 space-y-2 mb-10 max-w-sm mx-auto text-sm">
                 <li>• Full access to all stages and art zones</li>
-                <li>• General entry & re-entry</li>
+                <li>• General access</li>
                 <li>• Festival experience</li>
               </ul>
               <Button
                 as={Link}
-                href="https://tickets.celestyumfest.com/ga"  // Replace with real link when ready
+                href="https://tickets.celestyum.com"
                 isExternal
                 color="primary"
-                size="lg"
+                size="md"
                 fullWidth
-                className="text-lg py-8 font-medium"
-                isDisabled  // Remove isDisabled when sales open
+                className="text-base py-6"
               >
-                Coming Soon
+                Buy Now
               </Button>
             </CardBody>
           </Card>
 
-          {/* Tables (VIP) */}
           <Card className="bg-white/5 backdrop-blur-xl border-white/10 shadow-2xl hover:border-primary/50 transition-all group">
-            <CardBody className="py-16 px-12 text-center">
-              <h3 className="text-5xl font-bold mb-8">TABLES</h3>
-              <div className="mb-12">
-                <p className="text-4xl font-bold text-primary mb-2">
+            <CardBody className="py-12 px-10 text-center">
+              <h3 className="text-md font-bold mb-6">TABLES</h3>
+              <div className="mb-10">
+                <p className="text-3xl font-bold text-primary mb-2">
                   Starting at $5,000 USD
                 </p>
-                <p className="text-2xl text-white/70">
+                <p className="text-lg text-white/70">
                   Up to $35,000 USD
                 </p>
               </div>
-              <ul className="text-left text-white/90 space-y-3 mb-12 max-w-sm mx-auto">
-                <li>• Premium elevated viewing areas</li>
+              <ul className="text-left text-white/90 space-y-2 mb-10 max-w-sm mx-auto text-sm">
+                <li>• Premium backstage area</li>
                 <li>• Private table service</li>
                 <li>• Dedicated entry & host</li>
                 <li>• Bottle service included (tier dependent)</li>
@@ -71,25 +68,20 @@ export default function TicketsSection() {
               </ul>
               <Button
                 as={Link}
-                href="https://tickets.celestyumfest.com/tables"  // Replace with real link when ready
+                href="https://tables.celestyum.com"
                 isExternal
                 color="primary"
-                size="lg"
+                size="md"
                 fullWidth
-                className="text-lg py-8 font-medium"
-                isDisabled  // Remove isDisabled when sales open
+                className="text-base py-6"
               >
-                Reserve Table — Coming Soon
+                Reserve Table
               </Button>
             </CardBody>
           </Card>
         </div>
 
-        <div className="mt-20">
-          <p className="text-white/60 text-xl">
-            Ticket sales launch soon. Join the waitlist for early access.
-          </p>
-        </div>
+        
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-// components/AboutSection.tsx  (fixed: removed duplicate className on h2)
+// components/AboutSection.tsx  (all text sizes reduced - no xl, smaller and elegant)
 "use client";
 
 import { title } from "@/components/primitives";
@@ -49,7 +49,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative z-10 w-full px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <h2 className={title({ size: "lg" }) + " text-center mb-16"}>
+        <h2 className={title({ size: "md" }) + " text-center mb-16"}>
           CELESTYUM EXPERIENCE
         </h2>
 
@@ -70,7 +70,7 @@ function FeatureCard({ feature }: { feature: { title: string; image: string; sho
     <Card
       isPressable
       isHoverable
-      className="h-[500px] overflow-hidden relative group cursor-pointer"
+      className="h-[450px] overflow-hidden relative group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
@@ -84,15 +84,15 @@ function FeatureCard({ feature }: { feature: { title: string; image: string; sho
         src={feature.image}
       />
 
-      <CardHeader className="absolute z-10 top-8 left-8 flex-col items-start">
-        <p className="text-tiny text-white/70 uppercase font-bold">Feature</p>
-        <h4 className="text-white font-bold text-3xl drop-shadow-2xl">
+      <CardHeader className="absolute z-10 top-6 left-6 flex-col items-start">
+        <p className="text-xs text-white/70 uppercase font-bold">Feature</p>
+        <h4 className="text-white font-bold text-2xl drop-shadow-2xl">
           {feature.title}
         </h4>
       </CardHeader>
 
-      <CardFooter className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-transparent py-12 px-8 backdrop-blur-md border-t border-white/20">
-        <p className="text-white/95 text-base leading-relaxed text-center max-w-lg mx-auto">
+      <CardFooter className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-transparent py-10 px-6 backdrop-blur-md border-t border-white/20">
+        <p className="text-white/95 text-sm leading-relaxed text-center max-w-md mx-auto">
           {isHovered ? feature.full : feature.short}
         </p>
       </CardFooter>
