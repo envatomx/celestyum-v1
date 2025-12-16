@@ -1,53 +1,114 @@
-# Next.js & HeroUI Template
+```md
+# CELESTYUM®
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+**CELESTYUM®** is an electronic music and digital art festival platform built for immersive, high-performance web experiences.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+This repository contains the **official web application** for CELESTYUM, designed as a fullscreen, scroll-based experience with real-time visuals, 3D assets, and modern UI primitives.
 
-## Technologies Used
+Built and directed by **Sunshine Vendetta**  
+Powered by **VibeCluv**
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+---
 
-## How to Use
+## Overview
 
-### Use the template with create-next-app
+CELESTYUM is conceived as a next-generation festival experience combining:
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- Electronic music culture
+- Digital and generative art
+- Immersive visuals
+- Web-native interaction design
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+The website is intentionally built as a **single continuous scroll experience** rather than traditional page-based navigation to maximize immersion and performance.
+
+---
+
+## Tech Stack
+
+- Next.js (App Router)
+- HeroUI
+- Tailwind CSS
+- TypeScript
+- Framer Motion
+- model-viewer (3D assets)
+- Video-based fullscreen backgrounds
+
+### Architecture Priorities
+
+- Zero horizontal scroll
+- Fullscreen sections
+- Fixed immersive layers
+- Fast static generation
+- Modern deployment (Vercel-ready)
+
+---
+
+## Project Structure
+
 ```
 
-### Install dependencies
+app/         — App Router pages and layout
+components/  — UI and experience components
+public/      — Static assets (video, models, images)
+styles/      — Global styles
+config/      — Site configuration and metadata
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+````
+
+---
+
+## Development
+
+Install dependencies:
 
 ```bash
 npm install
-```
+````
 
-### Run the development server
+Run locally:
 
 ```bash
 npm run dev
 ```
 
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+Build for production:
 
 ```bash
-public-hoist-pattern[]=*@heroui/*
+npm run build
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+---
+
+## Deployment
+
+This project is designed to be deployed on **Vercel** for optimal performance and full compatibility with Next.js features.
+
+Custom domains, SSL, and edge delivery are fully supported.
+
+---
+
+## Status
+
+* Active development
+* Production-ready
+* Live deployment in progress
+
+---
+
+## Credits
+
+**Concept, direction, and engineering**
+Sunshine Vendetta
+
+**Platform & infrastructure**
+VibeCluv
+
+---
 
 ## License
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+All rights reserved.
+© CELESTYUM®
+
+```
+```
